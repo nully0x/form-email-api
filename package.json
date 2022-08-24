@@ -1,17 +1,20 @@
 {
-  "name": "lapps",
+  "name": "helgg-forms",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/server.js",
   "license": "MIT",
   "scripts": {
     "start": "node .",
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
-    "prod": "tsc && node ./server.js",
+    "prod": "tsc && node ./dist/server.js",
     "clean": "true",
     "build": "yarn run clean && tsc",
     "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=14.x"
   },
   "dependencies": {
     "@prisma/client": "^4.2.1",
