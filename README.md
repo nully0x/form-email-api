@@ -1,2 +1,3 @@
-# express-ts-stater
-This is starter template for express using typescript
+# email-api
+This is an email-api service for sending email notification for frontend forms
+
