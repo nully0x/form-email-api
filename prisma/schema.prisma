@@ -14,3 +14,24 @@ model contacts {
   name    String
   phone   String
 }
+
+model installation {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  email   String
+  other_info String
+  name    String
+  area_capacity   String
+  estate_name     String
+  country       String
+  state_of_residence    String
+}
+
+model volunteers {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  email   String
+  prefered_role  String
+  full_name    String
+  residence   String
+  resume_link  String
+  portfolio_link   String
+}
