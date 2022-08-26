@@ -27,19 +27,21 @@ const sendEmail = async (contact: any) => {
 
 router.post("/contacts", async (req: Request, res: Response) => {
   try {
-    const data = req.body;
-    const contact = await prisma.contacts.create({
-      data: {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        message: data.message,
-      },
-    });
-    await sendEmail(contact);
-    res.send(contact);
+    if (req.body && req.body !== null && req.body !== undefined) {
+      const data = req.body;
+      const contact = await prisma.contacts.create({
+        data: {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          message: data.message,
+        },
+      });
+      await sendEmail(contact);
+      res.send(contact);
+    }
   } catch (error) {
-    res.send(error)
+    res.send(error);
   }
 });
 
