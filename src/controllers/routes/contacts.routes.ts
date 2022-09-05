@@ -17,10 +17,10 @@ const sendEmail = async (contact: any) => {
   });
   const mailOptions = {
     from: process.env.EMAIL,
-    to: "olusegunsamson95@gmail.com",
-    subject: "You just got a new contact",
+    to: process.env.EMAIL,
+    subject: "New contact",
     //design text using html and css to format the email
-    html: `<section style="background-color: #f2f2f2; padding: 20px;"><h1 style="text-align: center;">You just got a new contact</h1><p style="text-align: center;">Name: ${contact.name}</p><p style="text-align: center;">Email: ${contact.email}</p><p style="text-align: center;">Phone: ${contact.phone}</p><p style="text-align: center;">Message: ${contact.message}</p></section>`,
+    html: `<section style="background-color: #f2f2f\2; padding: 20px;"><h1 style="text-align: center;">New Contact Details</h1><p style="text-align: center;">Name: ${contact.name}</p><p style="text-align: center;">Email: ${contact.email}</p><p style="text-align: center;">Phone: ${contact.phone}</p><p style="text-align: center;">Message: ${contact.message}</p></section>`,
   };
   await transporter.sendMail(mailOptions);
 };
